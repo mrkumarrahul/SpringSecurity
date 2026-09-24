@@ -22,5 +22,4 @@ public class GreetingsController {
     public String sayAdmin(){
         return "Hello ! Admin";
     }
-
 }
