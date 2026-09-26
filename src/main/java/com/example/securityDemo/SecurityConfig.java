@@ -73,7 +73,7 @@ public class SecurityConfig {
     @Bean
     public UserDetailsService userDetailsService(){
 
-        UserDetails user1 = User.withUsername("user1")
+        UserDetails user = User.withUsername("user1")
                 .password("{noop}password1")
                 .roles("USER")
                 .build();
@@ -83,7 +83,7 @@ public class SecurityConfig {
                 .roles("ADMIN")
                 .build();
         JdbcUserDetailsManager userDetailsManager=new JdbcUserDetailsManager(dataSource);
-        userDetailsManager.createUser(user1);
+        userDetailsManager.createUser(user);
         userDetailsManager.createUser(admin);
         return userDetailsManager;
         //return new InMemoryUserDetailsManager(user1, admin);
